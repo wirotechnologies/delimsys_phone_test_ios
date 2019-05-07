@@ -14,9 +14,6 @@ import AVFoundation
 class HomeViewController: UIViewController, UITextFieldDelegate, GPSControllerDelegate {
     
     func refreshDriverLocation(location: CLLocationCoordinate2D) {
-        print("abajo latitud y longitud")
-        print(location.latitude)
-        print(location.longitude)
         self.GPSLong = location.longitude
         self.GPSLat = location.latitude
     }
@@ -147,7 +144,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, GPSControllerDe
         let modelDevice = modelIdentifier()
         let model = UIDevice.current.localizedModel
         let tes = ""
-        let params = [
+        var params = [
             "phoneNumber":self.phoneNumberTfld.text,
             "os":"1",
             "osVersion":String(osVersion),
@@ -156,9 +153,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate, GPSControllerDe
             "lat":self.GPSLat,
             "lgt":self.GPSLong,
             "createdDate":Common.getDate(),
-            "notificationToken": "dsfsdfgsdfsdfds"//UserDefaults.standard.object(forKey: "deviceToken") as! String
+            "notificationToken": "dsfsdfgsdfsdfds"
             ] as [String : Any]
         
+        if UserDefaults.standard.object(forKey: "deviceToken") != nil {
+            params["notificationToken"] = UserDefaults.standard.object(forKey: "deviceToken") as! String
+        }
+        print("abajo params con el token")
+        print(params["notificationToken"])
         
         if UserDefaults.standard.bool(forKey: "testSended") == true {
             
@@ -198,12 +200,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, GPSControllerDe
             
         }
         
-        
-
-        
-        
-        
-        
+    
         
         
     }
