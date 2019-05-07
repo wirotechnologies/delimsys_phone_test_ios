@@ -118,7 +118,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let osVersion = UIDevice.current.systemVersion
         let modelDevice = modelIdentifier()
         let model = UIDevice.current.localizedModel
-
+        let tes = ""
         let params = [
             "phoneNumber":self.phoneNumberTfld.text,
             "os":"2",
