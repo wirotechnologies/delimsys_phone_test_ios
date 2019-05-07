@@ -102,6 +102,7 @@
                     <connections>
                         <outlet property="phoneNumberTfld" destination="RFb-eo-fzs" id="Var-MD-Tfq"/>
                         <outlet property="spinner" destination="pUr-ud-SWj" id="yhB-Vf-wK3"/>
+                        <outlet property="startTestBtnOutlet" destination="yF4-qX-aEw" id="nXB-WY-VPx"/>
                         <outlet property="viewContainer" destination="Vg1-t5-1Gv" id="uFQ-Rj-VZZ"/>
                     </connections>
                 </viewController>
