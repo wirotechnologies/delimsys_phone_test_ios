@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Delimsys Phone Test</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,6 +29,18 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We use your location to make it easier for you to plan and  manage deliveries. Location data is collected whenever you're online or tha app is on your screen and stored on our servers. Learn more https://privacy.delimsys.com/policy</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We use your location to make it easier for you to plan and  manage deliveries. Location data is collected whenever you're online or tha app is on your screen and stored on our servers. Learn more https://privacy.delimsys.com/policy</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We use your location to make it easier for you to plan and  manage deliveries. Location data is collected whenever you're online or tha app is on your screen and stored on our servers. Learn more https://privacy.delimsys.com/policy</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

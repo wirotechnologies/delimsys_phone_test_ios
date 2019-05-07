@@ -10,9 +10,11 @@ import CoreLocation
 
 
 protocol GPSControllerDelegate: class {
+    
     func refreshDriverLocation( location: CLLocationCoordinate2D)
+    
+    
 }
-
 
 class GPSController: NSObject, CLLocationManagerDelegate {
     
@@ -55,17 +57,18 @@ class GPSController: NSObject, CLLocationManagerDelegate {
      Updated by Wilman Rojas    Date: 01/19/2019
      Method to get location and prepare for send to server Delimsys
      **********************************************************************/
-    /*func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        sendLocation()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //lo comenté (Diego) sendLocation()
         refreshDriverLocation()
-    }*/
+    }
     
     /**********************************************************************
      Created by Wilman Rojas   Date:
      Updated by Wilman Rojas    Date: 01/19/2019
      Method to send location data to server Delimsys
      **********************************************************************/
-    /*func sendLocation(){
+    /*
+    func sendLocation(){
         let params = [
             "date" : Common.getDate(),
             "idDriver": "\(UserDefaults.standard.object(forKey: "idUser") as! Int)",
@@ -117,4 +120,3 @@ class GPSController: NSObject, CLLocationManagerDelegate {
         delegate?.refreshDriverLocation(location: locationManager.location!.coordinate)
     }
 }
-

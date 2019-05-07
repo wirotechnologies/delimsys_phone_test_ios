@@ -97,9 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         
     }
-    
- /********END NOTIFICATIONS FUNCTIONS************/
-    
+
     
     
     

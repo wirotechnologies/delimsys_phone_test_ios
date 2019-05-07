@@ -75,6 +75,7 @@
 		885140CC2280959400459B2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		885140CE2280C04100459B2A /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		885140D02280D83A00459B2A /* spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spinner.swift; sourceTree = "<group>"; };
+		88C1907E2281D9B20041B116 /* Delimsys Phone Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Delimsys Phone Test.entitlements"; sourceTree = "<group>"; };
 		AC335AFC227CECF400CC46EE /* Delimsys Phone Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delimsys Phone Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC335AFF227CECF400CC46EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC335B04227CECF400CC46EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -197,6 +198,7 @@
 		AC335AFE227CECF400CC46EE /* Delimsys Phone Test */ = {
 			isa = PBXGroup;
 			children = (
+				88C1907E2281D9B20041B116 /* Delimsys Phone Test.entitlements */,
 				881270C0227D025200E0BEAB /* ExtensionsAndClasses */,
 				881270B8227CFA7C00E0BEAB /* Styles */,
 				881270BF227D023300E0BEAB /* Views */,
@@ -295,6 +297,14 @@
 				TargetAttributes = {
 					AC335AFB227CECF400CC46EE = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					AC335B0F227CECF600CC46EE = {
 						CreatedOnToolsVersion = 10.2;
@@ -548,8 +558,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Delimsys Phone Test/Delimsys Phone Test.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3KYB9D64M2;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -562,6 +574,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wirotechnologies.delimsysphonetest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -571,8 +584,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Delimsys Phone Test/Delimsys Phone Test.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3KYB9D64M2;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -585,6 +600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wirotechnologies.delimsysphonetest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

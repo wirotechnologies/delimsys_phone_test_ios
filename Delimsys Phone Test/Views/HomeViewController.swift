@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import CoreLocation
+import UserNotifications
+import AVFoundation
 
-class HomeViewController: UIViewController, UITextFieldDelegate {
+class HomeViewController: UIViewController, UITextFieldDelegate, GPSControllerDelegate {
     
+    func refreshDriverLocation(location: CLLocationCoordinate2D) {
+        print("abajo latitud y longitud")
+        print(location.latitude)
+        print(location.longitude)
+        self.GPSLong = location.longitude
+        self.GPSLat = location.latitude
+    }
+    
+    var gpsController = GPSController()
     weak var activeField: UITextField?
     var Moved: Bool = false
     var IntroFields: Bool = false
+    var GPSLong:Double = 0.0
+    var GPSLat:Double = 0.0
     
     @IBOutlet weak var phoneNumberTfld: UITextField!
     @IBOutlet weak var viewContainer: UIStackView!
@@ -23,6 +37,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.hideKeyboardOnTouch()
         
+        gpsController.delegate = self
+        gpsController.startReceivingLocationChanges()
+
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
@@ -37,10 +54,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
         let center: NotificationCenter = NotificationCenter.default;
         
-        center.addObserver(self, selector:#selector(keyboardDidShow(notification:)),
-                           name: UIResponder.keyboardWillShowNotification, object:nil)
-        center.addObserver(self, selector:#selector(keyboardWillHide(notification:)),
-                           name: UIResponder.keyboardWillHideNotification, object:nil)
+        center.addObserver(self, selector:#selector(keyboardDidShow(notification:)), name: UIResponder.keyboardWillShowNotification, object:nil)
+        center.addObserver(self, selector:#selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object:nil)
 
     }
     /**********************************************************************
@@ -104,6 +119,19 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         uname(&sysinfo) // ignore return value
         return String(bytes: Data(bytes: &sysinfo.machine, count: Int(_SYS_NAMELEN)), encoding: .ascii)!.trimmingCharacters(in: .controlCharacters)
     }
+    
+    func hideSpinner(){
+        DispatchQueue.main.async {
+            self.spinner.stopAnimating()
+            self.spinner.isHidden = true
+            self.startTestBtnOutlet.isEnabled = true
+        }
+    }
+    func showSpinner(){
+        self.spinner.startAnimating()
+        self.spinner.isHidden = false
+        self.startTestBtnOutlet.isEnabled = false
+    }
     /**********************************************************************
      Created by Diego Paredes    Date: 05/03/2019
      Action Button to make the test
@@ -111,9 +139,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func startTestBtnAction(_ sender: Any) {
         //let osVersion = ProcessInfo().operatingSystemVersion
         
-        self.spinner.startAnimating()
-        self.spinner.isHidden = false
-        self.startTestBtnOutlet.isEnabled = false
+        self.gpsController.refreshDriverLocation()
+        
+        self.showSpinner()
         
         let osVersion = UIDevice.current.systemVersion
         let modelDevice = modelIdentifier()
@@ -121,33 +149,63 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let tes = ""
         let params = [
             "phoneNumber":self.phoneNumberTfld.text,
-            "os":"2",
+            "os":"1",
             "osVersion":String(osVersion),
             "phoneBrand":"IPhone",
             "phoneModel":modelDevice,
-            "lat":2,
-            "lgt":2,
+            "lat":self.GPSLat,
+            "lgt":self.GPSLong,
             "createdDate":Common.getDate(),
             "notificationToken": "dsfsdfgsdfsdfds"//UserDefaults.standard.object(forKey: "deviceToken") as! String
             ] as [String : Any]
         
-        Requests.requestDictionary(urlArg: Config.apiPhoneTest, paramsArg: params, methodArg: "POST"){ data in
-            if data["error"] as? Bool != nil && data["error"] as! Bool == true {
-                DispatchQueue.main.async {
-                    Alerts.alertOneButton(title: "Request Error", message: "Please Verify your inputs and try again", titleBtn: "Ok", viewController: self)
+        
+        if UserDefaults.standard.bool(forKey: "testSended") == true {
+            
+            let idRecord = String(UserDefaults.standard.object(forKey: "idRecord") as! Int)
+            print(idRecord)
+            Requests.requestDictionary(urlArg: Config.apiPhoneTest + "/" + idRecord, paramsArg: params, methodArg: "PUT"){ data in
+                if data["error"] as? Bool != nil && data["error"] as! Bool == true {
+                    DispatchQueue.main.async {
+                        Alerts.alertOneButton(title: "Request Error", message: "Please Verify your inputs and try again", titleBtn: "Ok", viewController: self)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        Alerts.alertOneButton(title: "Device Information", message: "Your phone is an " + model + " with and OS version " + osVersion, titleBtn: "Ok", viewController: self)
+                    }
                 }
-            } else {
-                DispatchQueue.main.async {
-                    Alerts.alertOneButton(title: "Device Information", message: "Your phone is an " + model + " with and OS version " + osVersion, titleBtn: "Ok", viewController: self)
+                print(data)
+                self.hideSpinner()
+            }
+            
+        } else {
+            
+            Requests.requestDictionary(urlArg: Config.apiPhoneTest, paramsArg: params, methodArg: "POST"){ data in
+                if data["error"] as? Bool != nil && data["error"] as! Bool == true {
+                    DispatchQueue.main.async {
+                        Alerts.alertOneButton(title: "Request Error", message: "Please Verify your inputs and try again", titleBtn: "Ok", viewController: self)
+                    }
+                } else {
+                    print(data)
+                    DispatchQueue.main.async {
+                        Alerts.alertOneButton(title: "Device Information", message: "Your phone is an " + model + " with and OS version " + osVersion, titleBtn: "Ok", viewController: self)
+                            UserDefaults.standard.set(data["id"], forKey: "idRecord")
+                            UserDefaults.standard.set(true, forKey: "testSended")
+                    }
                 }
+                self.hideSpinner()
             }
-            print(data)
-            DispatchQueue.main.async {
-                self.spinner.stopAnimating()
-                self.spinner.isHidden = true
-                self.startTestBtnOutlet.isEnabled = true
-            }
+            
         }
+        
+        
+
+        
+        
+        
+        
+        
+        
     }
     
 }
