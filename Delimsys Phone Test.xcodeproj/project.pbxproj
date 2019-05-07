@@ -11,6 +11,18 @@
 		881270BC227CFBCC00E0BEAB /* RoundedBlueTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881270BB227CFBCC00E0BEAB /* RoundedBlueTextField.swift */; };
 		881270BE227D00D200E0BEAB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881270BD227D00D200E0BEAB /* HomeViewController.swift */; };
 		881270C2227D028300E0BEAB /* ExtensionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881270C1227D028300E0BEAB /* ExtensionsViewController.swift */; };
+		8851409C2280876B00459B2A /* GPSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851409B2280876B00459B2A /* GPSController.swift */; };
+		8851409E22808C0700459B2A /* PushTokenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851409D22808C0700459B2A /* PushTokenController.swift */; };
+		885140A022808C7E00459B2A /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8851409F22808C7E00459B2A /* Requests.swift */; };
+		885140A222808D5A00459B2A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885140A122808D5A00459B2A /* Common.swift */; };
+		885140A422808E2A00459B2A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885140A322808E2A00459B2A /* Config.swift */; };
+		885140BF2280952800459B2A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885140BE2280952800459B2A /* GLKit.framework */; };
+		885140C32280954100459B2A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 885140C22280954100459B2A /* libc++.tbd */; };
+		885140C52280955100459B2A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 885140C42280955100459B2A /* libz.tbd */; };
+		885140CB2280957400459B2A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885140CA2280957400459B2A /* SystemConfiguration.framework */; };
+		885140CD2280959400459B2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885140CC2280959400459B2A /* UIKit.framework */; };
+		885140CF2280C04100459B2A /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885140CE2280C04100459B2A /* Alerts.swift */; };
+		885140D12280D83A00459B2A /* spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885140D02280D83A00459B2A /* spinner.swift */; };
 		AC335B00227CECF400CC46EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC335AFF227CECF400CC46EE /* AppDelegate.swift */; };
 		AC335B05227CECF400CC46EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC335B03227CECF400CC46EE /* Main.storyboard */; };
 		AC335B07227CECF600CC46EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC335B06227CECF600CC46EE /* Assets.xcassets */; };
@@ -41,6 +53,28 @@
 		881270BB227CFBCC00E0BEAB /* RoundedBlueTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBlueTextField.swift; sourceTree = "<group>"; };
 		881270BD227D00D200E0BEAB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		881270C1227D028300E0BEAB /* ExtensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsViewController.swift; sourceTree = "<group>"; };
+		8851409B2280876B00459B2A /* GPSController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSController.swift; sourceTree = "<group>"; };
+		8851409D22808C0700459B2A /* PushTokenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTokenController.swift; sourceTree = "<group>"; };
+		8851409F22808C7E00459B2A /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		885140A122808D5A00459B2A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		885140A322808E2A00459B2A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		885140B0228094D900459B2A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		885140B2228094E300459B2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		885140B4228094EC00459B2A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		885140B6228094F400459B2A /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		885140B8228094FD00459B2A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		885140BA2280950B00459B2A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		885140BC2280951500459B2A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		885140BE2280952800459B2A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		885140C02280953100459B2A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		885140C22280954100459B2A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		885140C42280955100459B2A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		885140C62280955A00459B2A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		885140C82280956500459B2A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		885140CA2280957400459B2A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		885140CC2280959400459B2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		885140CE2280C04100459B2A /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		885140D02280D83A00459B2A /* spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spinner.swift; sourceTree = "<group>"; };
 		AC335AFC227CECF400CC46EE /* Delimsys Phone Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delimsys Phone Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC335AFF227CECF400CC46EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC335B04227CECF400CC46EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +94,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				885140CD2280959400459B2A /* UIKit.framework in Frameworks */,
+				885140CB2280957400459B2A /* SystemConfiguration.framework in Frameworks */,
+				885140C52280955100459B2A /* libz.tbd in Frameworks */,
+				885140C32280954100459B2A /* libc++.tbd in Frameworks */,
+				885140BF2280952800459B2A /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +124,7 @@
 			children = (
 				881270B9227CFABA00E0BEAB /* RoundedBlueButton.swift */,
 				881270BB227CFBCC00E0BEAB /* RoundedBlueTextField.swift */,
+				885140D02280D83A00459B2A /* spinner.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -101,8 +141,36 @@
 			isa = PBXGroup;
 			children = (
 				881270C1227D028300E0BEAB /* ExtensionsViewController.swift */,
+				8851409B2280876B00459B2A /* GPSController.swift */,
+				8851409D22808C0700459B2A /* PushTokenController.swift */,
+				8851409F22808C7E00459B2A /* Requests.swift */,
+				885140A122808D5A00459B2A /* Common.swift */,
+				885140A322808E2A00459B2A /* Config.swift */,
+				885140CE2280C04100459B2A /* Alerts.swift */,
 			);
 			path = ExtensionsAndClasses;
+			sourceTree = "<group>";
+		};
+		885140AF228094D800459B2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				885140CC2280959400459B2A /* UIKit.framework */,
+				885140CA2280957400459B2A /* SystemConfiguration.framework */,
+				885140C82280956500459B2A /* QuartzCore.framework */,
+				885140C62280955A00459B2A /* OpenGLES.framework */,
+				885140C42280955100459B2A /* libz.tbd */,
+				885140C22280954100459B2A /* libc++.tbd */,
+				885140C02280953100459B2A /* ImageIO.framework */,
+				885140BE2280952800459B2A /* GLKit.framework */,
+				885140BC2280951500459B2A /* CoreText.framework */,
+				885140BA2280950B00459B2A /* CoreTelephony.framework */,
+				885140B8228094FD00459B2A /* CoreLocation.framework */,
+				885140B6228094F400459B2A /* CoreImage.framework */,
+				885140B4228094EC00459B2A /* CoreGraphics.framework */,
+				885140B2228094E300459B2A /* CoreData.framework */,
+				885140B0228094D900459B2A /* Accelerate.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AC335AF3227CECF400CC46EE = {
@@ -112,6 +180,7 @@
 				AC335B13227CECF600CC46EE /* Delimsys Phone TestTests */,
 				AC335B1E227CECF600CC46EE /* Delimsys Phone TestUITests */,
 				AC335AFD227CECF400CC46EE /* Products */,
+				885140AF228094D800459B2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,7 +361,14 @@
 				881270C2227D028300E0BEAB /* ExtensionsViewController.swift in Sources */,
 				881270BE227D00D200E0BEAB /* HomeViewController.swift in Sources */,
 				881270BA227CFABA00E0BEAB /* RoundedBlueButton.swift in Sources */,
+				885140D12280D83A00459B2A /* spinner.swift in Sources */,
+				8851409E22808C0700459B2A /* PushTokenController.swift in Sources */,
+				885140A222808D5A00459B2A /* Common.swift in Sources */,
 				AC335B00227CECF400CC46EE /* AppDelegate.swift in Sources */,
+				885140A022808C7E00459B2A /* Requests.swift in Sources */,
+				885140A422808E2A00459B2A /* Config.swift in Sources */,
+				8851409C2280876B00459B2A /* GPSController.swift in Sources */,
+				885140CF2280C04100459B2A /* Alerts.swift in Sources */,
 				881270BC227CFBCC00E0BEAB /* RoundedBlueTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +479,8 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -457,6 +535,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -470,6 +550,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KYB9D64M2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Delimsys Phone Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -489,6 +573,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KYB9D64M2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Delimsys Phone Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (

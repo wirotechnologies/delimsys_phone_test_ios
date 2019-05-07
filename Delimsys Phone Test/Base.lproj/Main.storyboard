@@ -41,7 +41,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="d6g-py-ZMd"/>
                                         </connections>
@@ -80,12 +80,18 @@
                                     <constraint firstAttribute="height" constant="32" id="wLl-kY-O1Z"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pUr-ud-SWj" customClass="spinner" customModule="Delimsys_Phone_Test" customModuleProvider="target">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pUr-ud-SWj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4bz-Ff-Tox"/>
                             <constraint firstAttribute="trailing" secondItem="Vg1-t5-1Gv" secondAttribute="trailing" constant="40" id="8cr-zQ-BUD"/>
                             <constraint firstItem="Yfc-jS-ogE" firstAttribute="top" secondItem="ZU8-wL-vWD" secondAttribute="bottom" constant="5" id="GnV-sx-kWR"/>
                             <constraint firstItem="ZU8-wL-vWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IEX-Np-JEV"/>
+                            <constraint firstItem="pUr-ud-SWj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NIr-rO-llk"/>
                             <constraint firstItem="Vg1-t5-1Gv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="TGX-MS-KKR"/>
                             <constraint firstItem="Yfc-jS-ogE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eaC-dA-T3W"/>
                             <constraint firstItem="Vg1-t5-1Gv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-40" id="oBO-Sp-vrS"/>
@@ -95,6 +101,7 @@
                     </view>
                     <connections>
                         <outlet property="phoneNumberTfld" destination="RFb-eo-fzs" id="Var-MD-Tfq"/>
+                        <outlet property="spinner" destination="pUr-ud-SWj" id="yhB-Vf-wK3"/>
                         <outlet property="viewContainer" destination="Vg1-t5-1Gv" id="uFQ-Rj-VZZ"/>
                     </connections>
                 </viewController>
